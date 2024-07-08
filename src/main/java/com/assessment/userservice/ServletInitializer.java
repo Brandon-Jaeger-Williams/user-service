@@ -1,4 +1,4 @@
-package com.assessment.user_service;
+package com.assessment.userservice;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
