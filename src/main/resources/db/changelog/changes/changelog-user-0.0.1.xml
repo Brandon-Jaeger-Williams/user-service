@@ -26,4 +26,65 @@
             <dropTable tableName="users"/>
         </rollback>
     </changeSet>
+
+    <changeSet author="BW" id="user-0.0.2" runOnChange="true">
+        <addColumn tableName="users">
+            <column name="role" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <rollback>
+            <dropColumn tableName="users">
+                <column name="role"/>
+            </dropColumn>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="BW" id="user-0.0.3" runOnChange="true">
+        <insert tableName="users">
+            <column name="id" value="1" />
+            <column name="created_at" value="2024-07-11 19:27:49.131" />
+            <column name="updated_at" value="2024-07-11 19:27:49.131" />
+            <column name="username" value="User1" />
+            <column name="password" value="$2a$10$oTC6Ol/wxDK50Cm359nzJe8R5xo3xXmJFLHKc8.D59Ies6nhoHHwC" />
+            <column name="role" value="USER" />
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>id=1</where>
+            </delete>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="BW" id="user-0.0.4" runOnChange="true">
+        <insert tableName="users">
+            <column name="id" value="2" />
+            <column name="created_at" value="2024-07-11 19:27:49.131" />
+            <column name="updated_at" value="2024-07-11 19:27:49.131" />
+            <column name="username" value="User2" />
+            <column name="password" value="$2a$10$.Zzg/sWM9jQrfZDue5q3q.9kEaVxZTk1s0b7upBRfyYHwx.OQmwdO" />
+            <column name="role" value="USER" />
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>id=2</where>
+            </delete>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="BW" id="user-0.0.5" runOnChange="true">
+        <insert tableName="users">
+            <column name="id" value="3" />
+            <column name="created_at" value="2024-07-11 19:27:49.131" />
+            <column name="updated_at" value="2024-07-11 19:27:49.131" />
+            <column name="username" value="User3" />
+            <column name="password" value="$2a$10$ulRyB82bjGNeHcqgpurDPec9.kGUvdpY62GdmW0pXNuiCijq4SSPa" />
+            <column name="role" value="USER" />
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>id=3</where>
+            </delete>
+        </rollback>
+    </changeSet>
 </databaseChangeLog>
