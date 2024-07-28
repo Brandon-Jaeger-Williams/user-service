@@ -16,9 +16,9 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public UserModel getUser(Long id) {
-        return UserMapper.mapFrom(userRepository.findById(id).orElseThrow(() ->
-                        new NotFoundException("User not found with id: " + id)
+    public UserModel getUser(String username) {
+        return UserMapper.mapFrom(userRepository.findByUsername(username).orElseThrow(() ->
+                        new NotFoundException("User not found with username: " + username)
                 )
         );
     }

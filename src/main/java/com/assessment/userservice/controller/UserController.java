@@ -16,9 +16,9 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/{id}")
-    @PreAuthorize("authentication.principal.id.equals(#id)")
-    public UserModel getUser(@PathVariable Long id) {
-        return userService.getUser(id);
+    @GetMapping("/{username}")
+    @PreAuthorize("authentication.principal.username.equals(#username)")
+    public UserModel getUser(@PathVariable String username) {
+        return userService.getUser(username);
     }
 }

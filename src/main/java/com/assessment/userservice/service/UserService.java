@@ -4,5 +4,5 @@ import com.assessment.userservice.model.UserModel;
 
 public interface UserService {
 
-    UserModel getUser(Long id);
+    UserModel getUser(String username);
 }
